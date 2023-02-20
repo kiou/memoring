@@ -1,0 +1,643 @@
+.navigationrightmobile{
+    float: right;
+    display: none;
+}
+
+.mobilemenucontent{
+    padding: 20px;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: -500%;
+    transition: 0.5s all ease-in-out;
+    background-color: #fff;
+    opacity: 0;
+}
+
+.mobilemenucontent.active{
+    top: 100%;
+    opacity: 1;
+}
+
+.mobilemenucontent a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    color: #171B37;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.navigation{
+    width: 100%;	
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    background-color: #F5F6F8;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.navigation .inner{
+    padding: 30px;
+    transition: 0.5s padding ease;
+}
+
+.navigation.fixed .inner{
+    padding: 20px 0px;
+}
+
+.navigation a{
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 16px 0px;
+    display: block;
+}
+
+.navigation .logo{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.navigation .logo:after{
+    content:'';
+    position: absolute;
+    left: -385px;
+    top: 20px;
+    height: 8px;
+    width: 340px;
+    border-top: solid 4px #213A87;
+    border-bottom: solid 4px #FC3C3C;
+    cursor:default;
+}
+
+.navigation .logo:before{
+    content:'';
+    position: absolute;
+    right: -385px;
+    top: 20px;
+    height: 8px;
+    width: 340px;
+    border-top: solid 4px #213A87;
+    border-bottom: solid 4px #FC3C3C;
+    cursor:default;
+}
+
+.navCentre{
+    float: left;   
+    width: 60%;
+    text-align: center;
+}
+
+
+.navLeft{
+    float: left;
+    width: 20%;
+    text-align: left;
+}
+
+.navRight{
+    float: right;
+    width: 20%;
+    text-align: right;
+}
+
+
+.section1 .inner{
+    padding: 70px 0px;
+}
+
+.section1Left{
+    float: left;
+    padding: 80px 0px 40px 0px;
+    width: 50%;
+    background-color: #fff;
+}
+
+.viewMore{
+    display: none;
+}
+
+.section1Right{
+    float: left;
+    width: calc(50% - 50px);
+    margin-left: 50px;
+}
+
+.section1Right img{
+    max-width: 100%;
+}
+
+.section1Plateau{
+    position: absolute;
+    right: 0px;
+    top: 70px;
+    max-width:calc(50% - 50px);
+    margin-left: 50px;
+    z-index: 0;
+}
+
+.section1Boite{
+    margin: 70px 0px 0px 57px;
+    position: relative;
+}
+
+.section1Cool{
+    position: absolute;
+    bottom: -110px;
+    right: -100px;
+}
+
+.section2 .inner{
+    padding: 70px 0px;
+    transition: 0.5s padding ease;
+}
+
+.videoPlayer{
+    width: 100%;
+    height: 574px;
+    background-color: #000;
+    margin-bottom: 25px;
+}
+
+.owl-dots{
+    text-align: center;
+    padding-top: 35px;
+}
+
+.owl-dot{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #FC3C3C !important;
+    margin: 5px;
+    opacity: 0.5;
+}
+
+.owl-dot.active{
+    background-color: #FC3C3C !important;
+    opacity: 1;
+}
+
+.owl-prev{
+    position: absolute;
+    left: -60px;
+    top: 260px;	
+}
+
+.owl-next{
+    position: absolute;
+    right: -60px;
+    top: 260px;	
+}
+
+.owl-prev i, .owl-next i{
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    display: block;
+    line-height: 50px;
+    color: #051546;
+}
+
+.section1Pow{
+    position: absolute;
+    left: 0px;
+    bottom: -250px;
+    z-index:0;
+}
+
+.section2Personnage{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 0;
+}
+
+.moduleLeft, .moduleRight{
+    width: 100%;
+    margin: 40px 0px 80px 0px;
+    position: relative;
+}
+
+.moduleImage img{
+    display: block;
+    max-width: 100%;
+}
+
+.moduleLeft .moduleImage{
+    width: 50%;
+    float: left;
+}
+
+.moduleLeft .moduleContent{
+    padding-top: 30px;
+    width: 50%; 
+    float: left;
+}
+
+.moduleRight .moduleImage{
+    width: calc(50% - 80px); 
+    float: left;
+    margin-left: 80px;
+}
+
+.moduleRight .moduleContent{
+    padding-top: 30px;
+    width: 50%; 
+    float: left;
+}
+
+.moduleBtn{
+    padding-top: 30px;
+}
+
+.section3{
+    background: #F5F6F8 url(../img/back-module1.png) no-repeat top left;
+    background-size: cover;
+}
+
+.section3 .inner{
+    padding: 90px 0px;
+}
+
+.section4{
+    background: #F5F6F8 url(../img/back-pub.png) no-repeat center center;
+    background-size: cover;
+    text-align: center;
+}
+
+.section4 .inner{
+    padding: 80px 0px;
+}
+
+.logoPub{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.section4 .logoPub:after{
+    content:'';
+    position: absolute;
+    left: -175px;
+    top: 20px;
+    height: 8px;
+    width: 150px;
+    border-top: solid 4px #213A87;
+    border-bottom: solid 4px #FC3C3C;
+}
+
+.section4 .logoPub:before{
+    content:'';
+    position: absolute;
+    right: -175px;
+    top: 20px;
+    height: 8px;
+    width: 150px;
+    border-top: solid 4px #213A87;
+    border-bottom: solid 4px #FC3C3C;
+}
+
+.section5{
+    background-color: #F5F6F8;
+}
+
+.section5 .inner{
+    padding: 90px 0px;
+}
+
+.moduleStats{
+    position: absolute;
+    right: 0px;
+    bottom: -75px;
+    width: 100%;
+    z-index: 2;
+}
+
+.moduleStat{
+    float: right;
+    padding: 20px 50px;
+    min-width: 280px;
+}
+
+.moduleStat h4{
+    margin-bottom: 0px;
+}
+
+.moduleStat span{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.moduleStat p{
+    font-size: 15px;
+}
+
+.stat1{
+    background-color: #213A87;
+    margin-left: 20px;
+}
+
+.stat2{
+    background-color: #FCE116;
+}
+
+.stat1 h4, .stat1 span, .stat1 p{
+    color: #fff;
+}
+
+.stat2 h4, .stat2 span, .stat2 p{
+    color: #051546;
+}
+
+.section5 .moduleLeft.first{
+    margin: 40px 0px 160px 0px;
+}
+
+.section5 .moduleLeft.first .moduleImage{
+    width: calc(50% - 80px); 
+    margin-right: 80px;
+}
+
+.section6{
+    background: #F5F6F8 url(../img/back-partenaire.png) no-repeat center center;
+    background-size: cover;
+    padding: 90px 30px;
+}
+
+.partenaireLogo{
+    margin-bottom: 20px;
+}
+
+.partenairePdf{
+    text-align: center;
+}
+
+.partenairePdf a{
+    color: #fff;
+}
+
+.section7{
+    background-color: #FC3C3C;
+    padding: 20px;
+}
+
+.section7 i{
+    padding: 0px 20px;
+}
+.section7 i, .section7 a{
+    color: #fff;
+}
+
+.section8{
+    background-color: #F5F6F8;
+}
+
+.section8 .inner{
+    padding: 90px 0px;
+}
+
+.section8Left{
+    width: calc(50% - 15px);
+    float: left;
+    margin-right: 15px;
+    padding-top: 110px;
+    text-align: center;
+}
+
+.section8Left img, .section8Right img{
+    max-width: 100%;
+}
+
+.section8Right{
+    width: calc(50% - 15px);
+    float: left;
+    margin-left: 15px;
+}
+
+.section8Right img{
+    margin-bottom: 30px;
+}
+
+.section9{
+    background: #F5F6F8 url(../img/back-avis.png) no-repeat center center;
+    background-size: cover;
+    padding: 90px 30px;
+    text-align: center;
+}
+
+.section9 .titreCentre h2{
+    color: #051546;
+}
+
+.section9 .avi{
+    width: 488px;
+    height: 338px;
+    background-image: url(../img/bulle-avis.png);
+}
+
+
+.section9 .aviType{
+    padding-top: 90px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.section9 .aviDate{
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 7px;
+}
+
+.section9 .aviContent{
+    font-size: 13px;
+    padding: 0px 100px;
+}
+
+.section10{
+    background: #F5F6F8 url(../img/back-actualites.png) no-repeat top left;
+    background-size: cover;
+    padding: 90px 0px;
+}
+
+.titreChapo{
+    text-align: center;
+    padding: 0px 200px 60px 200px;
+}
+
+.section10Left{
+    float: left;
+    width: calc(40% - 10px);
+    margin-right: 10px;
+}
+
+.section10Right{
+    float: left;
+    width: calc(60% - 10px);
+    margin-left: 10px;
+}
+
+.actuListeImage img{
+    max-width: 100%;
+    display: block;
+}
+
+.actuListeContentTop{
+    padding-top:15px;
+}
+
+.actuListeContentTop .flag{
+    float: left;
+}
+
+.actuListeDate{
+    float: right;
+}
+
+.actuListeDate p{
+    font-size: 13px;
+    font-style: italic;
+}
+
+.actuSmall{
+    margin-bottom: 20px;
+}
+
+.actuSmallImage{
+    float: left;
+    width: calc(30% - 20px);
+    margin-right: 20px;
+}
+
+.actuSmallImage img{
+    max-width: 100%;
+    display: block;
+}
+
+.actuSmallContentTop .flag{
+    float: left;
+}
+
+.actuSmallDate{
+    float: right;
+}
+
+.actuSmallDate p{
+    font-size: 13px;
+    font-style: italic;
+}
+
+.actuSmallContent{
+    float: left;
+    width: 70%;
+}
+
+.actuPersonnage{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 0;
+}
+
+.viewAll{
+    text-align: center;
+    padding-top: 70px;
+    text-transform: uppercase;
+}
+
+.section11{
+    background-color: #F5F6F8;
+    padding: 90px 0px 180PX 0PX;
+}
+
+.section11 h3{
+    text-transform: uppercase;
+    color: #051546;
+    border-bottom: 1px solid #051546;
+    cursor: pointer;
+    padding-bottom: 8px;
+}
+
+.section11 h3.ui-state-active{
+    color: #FC3C3C;
+}
+
+.faqContent{
+    padding: 10px 0px;
+}
+
+.faqPersonnage{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+.section12{
+    background: #F5F6F8 url(../img/back-contact.png) no-repeat top left;
+    background-size: cover;
+}
+
+.section12 .inner{
+    padding: 110px 0px 190px 0px;
+}
+
+.section12Left{
+    float: left;
+    margin-right: 15px;
+    width: calc(50% - 95px);
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.section12Right{
+    float: left;
+    margin-left: 15px;
+    width: calc(50% - 95px);
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.section13{
+    background: #F5F6F8 url(../img/back-footer.png) no-repeat top left;
+    background-size: cover;
+}
+
+.section13 .inner{
+    padding: 90px 0px;
+    text-align: center;
+}
+
+.section13 .col{
+    float: left;
+    width: calc((100% / 3) - 40px);
+    padding: 0px 20px;
+}
+
+.section13 p, .section13 a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 3px;
+}
+
+.section13 h4{
+    color: #fff;
+}
+
+.section13Logo{
+    margin-bottom: 30px; 
+}
+
+.section13 .reseaux a{
+    font-size: 22px;
+    display: inline-block;
+    padding: 0px 4px;
+}

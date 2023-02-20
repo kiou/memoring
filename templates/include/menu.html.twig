@@ -1,0 +1,27 @@
+<nav class="navigation">
+    <div class="inner">
+    
+        <div class="navLeft">
+            <a href="#" class="linknav" data-nav=".section3">Question</a>
+        </div>
+        <div class="navCentre">
+           <div class="logo"><img src="{{ asset('img/logomenu.png') }}" class="linknav" data-nav=".content" alt="L'informatique avec vous logo"></div>
+        </div> 
+
+        <div class="navRight">
+            <a href="#" class="linknav" data-nav=".section5">Strategie</a>
+        </div>
+
+        {% if action is defined %}
+            <div class="navigationrightmobile">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <div class="mobilemenucontent">
+                <a href="">Lien</a>
+            </div>
+        {% endif %}
+
+        <div class="clear"></div>
+    </div>
+</nav>
