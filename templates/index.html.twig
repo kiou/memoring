@@ -54,27 +54,18 @@
             </div>
 
             <div class="owl-one owl-carousel">
-                <div>
-                    <div class="videoPlayer">
-                    </div>
-                    <div class="videoContent">
-                        <p>Lorem ipsum dolor sit amet consectetur. Ornare facilisis varius lobortis ullamcorper enim. Tellus convallis viverra cursus integer enim duis fusce nulla. Massa fames velit at eget orci arcu. Dolor etiam viverra integer molestie morbi morbi vel laoreet. Elementum malesuada lacinia interdum morbi est molestie cras eget. Ornare proin vitae dolor porta diam egestas non feugiat odio. Egestas quis vitae in sed. Egestas consectetur purus in nunc. Est arcu purus egestas sed. Eget consequat tincidunt donec quisque leo. Est faucibus cras ultrices morbi nunc. Urna diam proin aliquam sollicitudin enim sit etiam praesent porttitor. Commodo imperdiet id ut urna odio dui sem.</p>
-                    </div>
-                </div>
 
-                <div>
-                    <div class="videoPlayer"></div>
-                    <div class="videoContent">
-                        <p>Lorem ipsum dolor sit amet consectetur. Ornare facilisis varius lobortis ullamcorper enim. Tellus convallis viverra cursus integer enim duis fusce nulla. Massa fames velit at eget orci arcu. Dolor etiam viverra integer molestie morbi morbi vel laoreet. Elementum malesuada lacinia interdum morbi est molestie cras eget. Ornare proin vitae dolor porta diam egestas non feugiat odio. Egestas quis vitae in sed. Egestas consectetur purus in nunc. Est arcu purus egestas sed. Eget consequat tincidunt donec quisque leo. Est faucibus cras ultrices morbi nunc. Urna diam proin aliquam sollicitudin enim sit etiam praesent porttitor. Commodo imperdiet id ut urna odio dui sem.</p>
+                {% for video in videos %}
+                    <div>
+                        <div class="videoPlayer">
+                            <iframe width="100%" height="574px" src="https://www.youtube.com/embed/{{ video.link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="videoContent">
+                            <p>Lorem ipsum dolor sit amet consectetur. Ornare facilisis varius lobortis ullamcorper enim. Tellus convallis viverra cursus integer enim duis fusce nulla. Massa fames velit at eget orci arcu. Dolor etiam viverra integer molestie morbi morbi vel laoreet. Elementum malesuada lacinia interdum morbi est molestie cras eget. Ornare proin vitae dolor porta diam egestas non feugiat odio. Egestas quis vitae in sed. Egestas consectetur purus in nunc. Est arcu purus egestas sed. Eget consequat tincidunt donec quisque leo. Est faucibus cras ultrices morbi nunc. Urna diam proin aliquam sollicitudin enim sit etiam praesent porttitor. Commodo imperdiet id ut urna odio dui sem.</p>
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
 
-                <div>
-                    <div class="videoPlayer"></div>
-                    <div class="videoContent">
-                        <p>Lorem ipsum dolor sit amet consectetur. Ornare facilisis varius lobortis ullamcorper enim. Tellus convallis viverra cursus integer enim duis fusce nulla. Massa fames velit at eget orci arcu. Dolor etiam viverra integer molestie morbi morbi vel laoreet. Elementum malesuada lacinia interdum morbi est molestie cras eget. Ornare proin vitae dolor porta diam egestas non feugiat odio. Egestas quis vitae in sed. Egestas consectetur purus in nunc. Est arcu purus egestas sed. Eget consequat tincidunt donec quisque leo. Est faucibus cras ultrices morbi nunc. Urna diam proin aliquam sollicitudin enim sit etiam praesent porttitor. Commodo imperdiet id ut urna odio dui sem.</p>
-                    </div>
-                </div>
             </div>
 
             <div class="clear"></div>

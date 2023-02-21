@@ -60,6 +60,12 @@
     position: relative;
     display: inline-block;
     cursor: pointer;
+    transition: 0.3s all ease;
+    opacity: 1;
+}
+
+.navigation .logo:hover{
+    opacity: 0.6;
 }
 
 .navigation .logo:after{

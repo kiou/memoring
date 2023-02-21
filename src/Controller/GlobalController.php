@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\Type\ContactType;
+use App\Repository\YoutubeRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
@@ -12,6 +13,7 @@ class GlobalController extends AbstractController
 {
     public function index(
             Request $request,
+            YoutubeRepository $YoutubeRepository,
             MailerInterface $mailer,
         )
     {
@@ -39,9 +41,12 @@ class GlobalController extends AbstractController
 
         }
 
+        $videos = $YoutubeRepository->findAll();
+
         return $this->render('index.html.twig',[
             'form' => $form->createView(),
-            'action' => 'accueil'
+            'action' => 'accueil',
+            'videos' => $videos
         ]);
     }
 

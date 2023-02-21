@@ -125,6 +125,12 @@ textarea{
     color: #FC3C3C;
     font-size: 17px;
     font-weight: bold;
+    opacity: 1;
+    transition: 0.3s all ease;
+}
+
+.btnContent:hover{
+    opacity: 0.6;
 }
 
 .error{
@@ -150,12 +156,25 @@ textarea{
     text-transform: uppercase;
     color: #fff;
     font-size: 14px;
+    opacity: 1;
+    transition: 0.3s all ease;
+
+}
+
+.btn:hover{
+    opacity: 0.6;
 }
 
 .btnform{
     cursor: pointer;
     border: none;
     width: calc(100% - 60px);
+    opacity: 1;
+    transition: 0.3s all ease;
+}
+
+.btnform:hover{
+    opacity: 0.6;
 }
 
 .flag{
