@@ -6,7 +6,6 @@ use App\Entity\Youtube;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -23,7 +22,6 @@ class YoutubeCrudController extends AbstractCrudController
     {
         return $filters
             ->add('title')
-            ->add('categorie')
         ;
     }
 
@@ -39,15 +37,7 @@ class YoutubeCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        $timestamp = time();
-
          yield TextField::new('title', 'Titre');
-         yield ChoiceField::new('categorie')
-            ->autocomplete()->setChoices([
-                'Categorie1' => 'Categorie1',
-                'Categorie2' => 'Categorie2',
-                'Categorie3' => 'Categorie3'
-            ]);
          yield TextField::new('link', 'Lien');
          yield TextEditorField::new('contenu')
             ->hideOnIndex()
@@ -55,10 +45,5 @@ class YoutubeCrudController extends AbstractCrudController
             ->setFormType(CKEditorType::class);
          yield BooleanField::new('isActive','Actif');
   
-    }
-
-    public function getUploadRootDir()
-    {
-        return __DIR__.'/../../../public/img/';
     }
 }

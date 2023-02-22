@@ -1,0 +1,39 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block title %} <title> L'informatique avec vous - {{ actualite.titre }}</title>{% endblock %}
+
+{% block opengraph %}
+    <meta property="og:title" content="L'informatique avec vous - {{ actualite.titre }}">
+    <meta property="og:description" content="{{ actualite.resume }}">
+    <meta property="og:url" content="https://lucpinelli.fr{{app.request.getBaseURL() ~ path('app_actualites_view',{'slug': actualite.slug, 'id': actualite.id})}}">
+    <meta property="og:image" content="https://lucpinelli.fr{{ asset('img/upload/' ~ actualite.image) }}">
+{% endblock %}
+
+{% block content %}
+
+    {{ include('include/breadcrumb.html.twig') }}
+
+    <div class="section page">
+        <div class="inner">
+
+            <div class="actualiteFlex {% if actualite.fullsize != false %}fullsize{% endif %}">
+
+                <div class="actualiteImage">
+                    <img src="{{ asset('img/upload/' ~ actualite.image) }}">
+
+                    <div class="actualiteDate">
+                        <p class="flag">{{ actualite.created|date("d M Y") }}</p>
+                    </div>
+                </div>
+
+                <div class="actualiteContentAll">
+                    <h1>{{ actualite.titre }}</h1>
+                    {{ actualite.contenu|raw }}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

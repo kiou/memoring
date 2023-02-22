@@ -2,20 +2,20 @@
 
 namespace App\Entity;
 
-use App\Repository\YoutubeRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ActualiteRepository;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Table(name : "youtube")]
+#[ORM\Table(name : "actualite")]
+#[ORM\Entity(repositoryClass: ActualiteRepository::class)]
 #[ORM\HasLifecycleCallbacks]
-#[ORM\Entity(repositoryClass: YoutubeRepository::class)]
-class Youtube
+class Actualite 
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type : "integer")]
-    private ?int $id = null;
+    private $id;
 
     #[ORM\Column(type : "datetimetz")]
     private $created;
@@ -25,11 +25,18 @@ class Youtube
 
     #[ORM\Column(type : "string", length : 255)]
     #[Assert\NotBlank(message : "Compléter le champ titre")]
-    private ?string $title = null;
+    private $titre;
 
-    #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message : "Compléter la lien")]
-    private ?string $link = null;
+    #[ORM\Column(type : "string", length : 255)]
+    #[Assert\NotBlank(message : "Compléter le champ slug")]
+    private $slug;
+
+    #[ORM\Column(type : "string", length : 255, nullable:true)]
+    private $image;
+
+    #[ORM\Column(type : "text")]
+    #[Assert\NotBlank(message : "Compléter le champ résumé")]
+    private $resume;
 
     #[ORM\Column(type : "text")]
     #[Assert\NotBlank(message : "Compléter le champ contenu")]
@@ -37,6 +44,10 @@ class Youtube
 
     #[ORM\Column(name : "is_active", type : "boolean")]
     private $isActive;
+ 
+    #[ORM\Column(type : "string", length : 255)]
+    #[Assert\NotBlank(message : "Compléter la catégorie")]
+    private ?string $categorie = null;
 
     public function __construct()
     {
@@ -57,6 +68,54 @@ class Youtube
     public function setCreated(\DateTimeInterface $created): self
     {
         $this->created = $created;
+
+        return $this;
+    }
+
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
+
+    public function setTitre(string $titre): self
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(string $resume): self
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    public function getContenu(): ?string
+    {
+        return $this->contenu;
+    }
+
+    public function setContenu(string $contenu): self
+    {
+        $this->contenu = $contenu;
 
         return $this;
     }
@@ -91,39 +150,27 @@ class Youtube
         $this->changed = new \DateTime();
     }
 
-    public function getTitle(): ?string
+    public function getImage()
     {
-        return $this->title;
+        return $this->image;
     }
 
-    public function setTitle(string $title): self
+    public function setImage(string $image = null)
     {
-        $this->title = $title;
+        $this->image = $image;
+        return $this;
+    }
+
+    public function getCategorie(): ?string
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(string $categorie): self
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }
 
-    public function getLink(): ?string
-    {
-        return $this->link;
-    }
-
-    public function setLink(string $link): self
-    {
-        $this->link = $link;
-
-        return $this;
-    }
-
-    public function getContenu(): ?string
-    {
-        return $this->contenu;
-    }
-
-    public function setContenu(string $contenu): self
-    {
-        $this->contenu = $contenu;
-
-        return $this;
-    }
 }

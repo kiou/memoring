@@ -56,6 +56,11 @@
     display: block;
 }
 
+.navigation .logo a{
+    padding: 0px;
+    display: inline-block;
+}
+
 .navigation .logo{
     position: relative;
     display: inline-block;
@@ -98,6 +103,10 @@
     text-align: center;
 }
 
+.navCentre.full{
+    width: 100%;
+    float: none;
+}
 
 .navLeft{
     float: left;
@@ -111,6 +120,80 @@
     text-align: right;
 }
 
+.breadcrumb{
+    list-style: none;
+    background-color: #F5F6F8;
+}
+
+.breadcrumb .inner{
+    padding: 40px;
+}
+
+.breadcrumb li{
+    display: inline-block;
+}
+
+.breadcrumb li a{
+    padding: 20px 15px 0px 0px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.breadcrumb li i{
+    padding-right: 13px;
+}
+
+.page .inner {
+    padding:70px 120px;
+}
+
+.page .inner h1 {
+    margin-bottom: 10px;
+}
+
+.page .titreCentre{
+    margin-bottom: 70px;
+}
+
+.actualites{
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 30px);
+    margin: 0px -15px 0px -15px;
+}
+
+.actualite{
+    background-color: #F5F6F8;
+    width: calc((100% / 3) - 60px);
+    margin:0px 15px 40px 15px;
+    position: relative;
+    transition: 0.3s all ease;
+    padding: 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+}
+
+.actuListeImage img{
+    max-width: 100%;
+    display: block;
+}
+
+.actuListeContentTop{
+    padding-top:15px;
+}
+
+.actuListeContentTop .flag{
+    float: left;
+}
+
+.actuListeDate{
+    float: right;
+}
+
+.actuListeDate p{
+    font-size: 13px;
+    font-style: italic;
+}
 
 .section1 .inner{
     padding: 70px 0px;
@@ -489,24 +572,24 @@
     margin-left: 10px;
 }
 
-.actuListeImage img{
+.actualiteImage img{
     max-width: 100%;
     display: block;
 }
 
-.actuListeContentTop{
+.actualiteContentTop{
     padding-top:15px;
 }
 
-.actuListeContentTop .flag{
+.actualiteContentTop .flag{
     float: left;
 }
 
-.actuListeDate{
+.actualiteDate{
     float: right;
 }
 
-.actuListeDate p{
+.actualiteDate p{
     font-size: 13px;
     font-style: italic;
 }

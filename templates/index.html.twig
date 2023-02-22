@@ -490,89 +490,53 @@
 
             <div class="section10Left">
                 <div class="actuListeImage">
-                    <img src="{{ asset('img/actualite1.png') }}">
+                    <img src="{{ asset('img/miniature/' ~ lastActualite[0].image) }}">
                 </div>
 
                 <div class="actuListeContent">
                     <div class="actuListeContentTop">
-                        <div class="flag">Catégorie</div>
-                        <div class="actuListeDate"><p>20/02/2023</p></div>
+                        <div class="flag">{{ lastActualite[0].categorie }}</div>
+                        <div class="actuListeDate"><p>{{ lastActualite[0].created|date("d/m/Y") }}</p></div>
                         <div class="clear"></div>
                     </div>
 
-                    <h2>Tire de l'actu</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo. Sed interdum, dolor vitae commodo sagittis, orci ipsum laoreet purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo. Sed interdum, dolor vitae commodo sagittis, orci ipsum laoreet purus.</p>
-                    <a href="lien" class="btnContent">Lire la suite</a>
+                    <h2>{{ lastActualite[0].titre }}</h2>
+                    <p>{{ lastActualite[0].resume }}</p>
+                    <a href="{{ path('app_actualites_view',{'slug': lastActualite[0].slug, 'id': lastActualite[0].id})}}" class="btnContent">Lire la suite</a>
                 </div>
             </div>
 
             <div class="section10Right">
-                <div class="actuSmall">
-                    <div class="actuSmallImage">
-                        <img src="{{ asset('img/actualite2.png') }}">
-                    </div>
+                {% for nextActualite in nextActualites %}
 
-                    <div class="actuSmallContent">
-                        <div class="actuSmallContentTop">
-                            <div class="flag">Catégorie</div>
-                            <div class="actuSmallDate"><p>20/02/2023</p></div>
-                            <div class="clear"></div>
+                    <div class="actuSmall">
+
+                        <div class="actuSmallImage">
+                            <img src="{{ asset('img/miniature/' ~ nextActualite.image) }}">
                         </div>
 
-                        <h2>Tire de l'actu</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo.</p>
-                        <a href="lien" class="btnContent">Lire la suite</a>
-                    </div>
+                        <div class="actuSmallContent">
+                            <div class="actuSmallContentTop">
+                                <div class="flag">{{ nextActualite.categorie }}</div>
+                                <div class="actuSmallDate"><p>{{ nextActualite.created|date("d/m/Y") }}</p></div>
+                                <div class="clear"></div>
+                            </div>
 
-                    <div class="clear"></div>
-                </div>
-
-                <div class="actuSmall">
-                    <div class="actuSmallImage">
-                        <img src="{{ asset('img/actualite3.png') }}">
-                    </div>
-
-                    <div class="actuSmallContent">
-                        <div class="actuSmallContentTop">
-                            <div class="flag">Catégorie</div>
-                            <div class="actuSmallDate"><p>20/02/2023</p></div>
-                            <div class="clear"></div>
+                            <h2>{{ nextActualite.titre }}</h2>
+                            <p>{{ nextActualite.resume }}</p>
+                            <a href="{{ path('app_actualites_view',{'slug': nextActualite.slug, 'id': nextActualite.id})}}" class="btnContent">Lire la suite</a>
                         </div>
 
-                        <h2>Tire de l'actu</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo.</p>
-                        <a href="lien" class="btnContent">Lire la suite</a>
+                        <div class="clear"></div>
                     </div>
 
-                    <div class="clear"></div>
-                </div>
-
-                <div class="actuSmall">
-                    <div class="actuSmallImage">
-                        <img src="{{ asset('img/actualite4.png') }}">
-                    </div>
-
-                    <div class="actuSmallContent">
-                        <div class="actuSmallContentTop">
-                            <div class="flag">Catégorie</div>
-                            <div class="actuSmallDate"><p>20/02/2023</p></div>
-                            <div class="clear"></div>
-                        </div>
-
-                        <h2>Tire de l'actu</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo.</p>
-                        <a href="lien" class="btnContent">Lire la suite</a>
-                    </div>
-
-                    <div class="clear"></div>
-                </div>
-
+                {% endfor %}
             </div>
             
             <div class="clear"></div>
 
             <div class="viewAll">
-                <a href="lien" class="btnContent">TOUTE L'ACTUALITE</a>
+                <a href="{{ path('app_actualites') }}" class="btnContent">TOUTE L'ACTUALITE</a>
             </div>
         </div>
 
