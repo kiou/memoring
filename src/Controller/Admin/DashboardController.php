@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Entity\Block;
 use App\Entity\Youtube;
 use App\Entity\Actualite;
+use App\Entity\Partenaire;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -36,12 +37,13 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::section('Gestion');
-        yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-users', User::class)->setDefaultSort(['id' => 'DESC']);
-        yield MenuItem::linkToCrud('Blocks', 'fa fa-users', Block::class)->setDefaultSort(['id' => 'DESC']);
+        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-dot-circle', User::class)->setDefaultSort(['id' => 'DESC']);
+        yield MenuItem::linkToCrud('Blocks', 'fas fa-dot-circle', Block::class)->setDefaultSort(['id' => 'DESC']);
 
         yield MenuItem::section('Contenu');
-        yield MenuItem::linkToCrud('Youtube', 'fab fa-youtube', Youtube::class)->setDefaultSort(['id' => 'DESC']);
-        yield MenuItem::linkToCrud('Actualités', 'fa fa-newspaper', Actualite::class)->setDefaultSort(['id' => 'DESC']);
+        yield MenuItem::linkToCrud('Youtube', 'fas fa-dot-circle', Youtube::class)->setDefaultSort(['id' => 'DESC']);
+        yield MenuItem::linkToCrud('Actualités', 'fas fa-dot-circle', Actualite::class)->setDefaultSort(['id' => 'DESC']);
+        yield MenuItem::linkToCrud('Partenaires', 'fas fa-dot-circle', Partenaire::class)->setDefaultSort(['id' => 'DESC']);
     }
 
     public function configureUserMenu(UserInterface $user): UserMenu
