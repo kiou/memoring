@@ -16,13 +16,15 @@
     <div class="section page">
         <div class="inner">
 
-            <div class="actualiteFlex {% if actualite.fullsize != false %}fullsize{% endif %}">
+            <div class="actualiteFlex">
 
                 <div class="actualiteImage">
                     <img src="{{ asset('img/upload/' ~ actualite.image) }}">
 
-                    <div class="actualiteDate">
-                        <p class="flag">{{ actualite.created|date("d M Y") }}</p>
+                    <div class="actualiteInfos">
+                        <div class="flag">{{ actualite.categorie }}</div>
+                        <div class="actualiteDate"><p>{{ actualite.created|date("d/m/Y") }}</p></div>
+                        <div class="clear"></div>
                     </div>
                 </div>
 
