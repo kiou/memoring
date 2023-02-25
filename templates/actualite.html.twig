@@ -1,12 +1,12 @@
 {% extends 'app/layout.html.twig' %}
 
-{% block title %} <title> L'informatique avec vous - {{ actualite.titre }}</title>{% endblock %}
+{% block title %} <title> Memo Ring - {{ actualite.titre }}</title>{% endblock %}
 
 {% block opengraph %}
-    <meta property="og:title" content="L'informatique avec vous - {{ actualite.titre }}">
+    <meta property="og:title" content="Memo Ring - {{ actualite.titre }}">
     <meta property="og:description" content="{{ actualite.resume }}">
-    <meta property="og:url" content="https://lucpinelli.fr{{app.request.getBaseURL() ~ path('app_actualites_view',{'slug': actualite.slug, 'id': actualite.id})}}">
-    <meta property="og:image" content="https://lucpinelli.fr{{ asset('img/upload/' ~ actualite.image) }}">
+    <meta property="og:url" content="https://site58.lucpinelli.fr{{app.request.getBaseURL() ~ path('app_actualites_view',{'slug': actualite.slug, 'id': actualite.id})}}">
+    <meta property="og:image" content="https://site58.lucpinelli.fr{{ asset('img/upload/' ~ actualite.image) }}">
 {% endblock %}
 
 {% block content %}

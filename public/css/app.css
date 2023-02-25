@@ -763,3 +763,24 @@
     display: inline-block;
     padding: 0px 4px;
 }
+
+@media (max-width: 1730px) {
+    .section2Personnage{
+        opacity: 0.2;
+    }
+
+    .faqPersonnage{
+        opacity: 0.2;
+    }
+
+    .actuPersonnage{
+        opacity: 0.2;
+    }
+}
+
+
+@media (max-width: 1420px) {
+    .section1Cool{
+        display: none;
+    }
+}

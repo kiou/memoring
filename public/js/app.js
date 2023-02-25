@@ -14,9 +14,15 @@ $( document ).ready(function() {
         margin:130,
         nav:false,
         responsive:{
-            1000:{
+            1500:{
                 items:6
-            }
+            },
+            1300:{
+                items:5
+            },
+            1000:{
+                items:4
+            },
         }
     });
 
@@ -25,9 +31,12 @@ $( document ).ready(function() {
         margin:80,
         nav:false,
         responsive:{
-            1000:{
+            1500:{
                 items:3
-            }
+            },
+            1000:{
+                items:2
+            },
         }
     });
 
