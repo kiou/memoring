@@ -3,8 +3,10 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\Type\ContactType;
-use App\Repository\ActualiteRepository;
 use App\Repository\YoutubeRepository;
+use App\Repository\ActualiteRepository;
+use App\Repository\PartenaireRepository;
+use App\Repository\TemoignageRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
@@ -16,7 +18,9 @@ class GlobalController extends AbstractController
             Request $request,
             MailerInterface $mailer,
             YoutubeRepository $YoutubeRepository,
-            ActualiteRepository $ActualiteRepository
+            ActualiteRepository $ActualiteRepository,
+            PartenaireRepository $PartenaireRepository,
+            TemoignageRepository $TemoignageRepository
         )
     {
         $contact = new Contact;
@@ -46,13 +50,17 @@ class GlobalController extends AbstractController
         $videos = $YoutubeRepository->findBy(['isActive' => 1], []);
         $lastActualite = $ActualiteRepository->getLastActualite();
         $nextActualites = $ActualiteRepository->getNextActualite();
+        $partenaires = $PartenaireRepository->findBy(['isActive' => 1], []);
+        $temoignages = $TemoignageRepository->findBy(['isActive' => 1], []);
 
         return $this->render('index.html.twig',[
             'form' => $form->createView(),
             'action' => 'accueil',
             'videos' => $videos,
             'lastActualite' => $lastActualite,
-            'nextActualites' => $nextActualites
+            'nextActualites' => $nextActualites,
+            'partenaires' => $partenaires,
+            'temoignages' => $temoignages
         ]);
     }
 

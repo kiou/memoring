@@ -7,6 +7,8 @@ use Imagine\Gd\Imagine;
 use App\Utilities\Upload;
 use App\Entity\Partenaire;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -44,7 +46,7 @@ class PartenaireCrudController extends AbstractCrudController
          yield TextField::new('titre', 'Titre');
          yield ImageField::new('logo')
                     ->setUploadDir('public/img/upload/')
-                    ->setBasePath('img/miniature/')
+                    ->setBasePath('img/upload/')
                     ->setUploadedFileNamePattern('[slug]-'.$timestamp.'.[extension]')
                     ->setFormTypeOption('upload_new', function(UploadedFile $file) use ($timestamp){
                         $upload = new Upload();
@@ -57,16 +59,22 @@ class PartenaireCrudController extends AbstractCrudController
 
                         $imagine = new Imagine();
 
+                        $size = new Box(1920,1080);
+                        $imagine->open($file)
+                                ->thumbnail($size, 'inset')
+                                ->save($this->getUploadRootDir().'upload/'.$image);
+
                         $size = new Box(470,470);
                         $imagine->open($file)
                                 ->thumbnail($size, 'inset')
                                 ->save($this->getUploadRootDir().'miniature/'.$image);
 
                 });
-            yield ImageField::new('pdf', 'Fichier PDF')
+           yield ImageField::new('pdf','Fichier PDF')
                 ->setUploadDir('public/file/upload/')
                 ->setBasePath('file/upload/')
-                ->setUploadedFileNamePattern('[slug]-'.$timestamp.'.[extension]');
+                ->setUploadedFileNamePattern('[slug]-'.$timestamp.'.[extension]')
+                ->setTemplatePath('fields/fil.html.twig');
            yield BooleanField::new('isActive','Actif');
   
     }

@@ -383,25 +383,19 @@
 
         <div class="owl-two owl-carousel">
 
-            <div>
-                <div class="partenaireLogo">
-                    <img src="{{ asset('img/partenaire1.png') }}">
-                </div>
+            {% for partenaire in partenaires %}
+                <div>
+                    <div class="partenaireLogo">
+                        <img src="{{ asset('img/miniature/' ~ partenaire.logo) }}">
+                    </div>
 
-                <div class="partenairePdf">
-                    <a href="#">Télécharger le PDF</a>
+                    {% if partenaire.pdf is not null %}
+                        <div class="partenairePdf">
+                            <a href="file/upload/{{ partenaire.pdf }}">Télécharger le PDF</a>
+                        </div>
+                    {% endif %}
                 </div>
-            </div>
-
-            <div>
-                <div class="partenaireLogo">
-                    <img src="{{ asset('img/partenaire2.png') }}">
-                </div>
-
-                <div class="partenairePdf">
-                    <a href="#">Télécharger le PDF</a>
-                </div>
-            </div>
+            {% endfor %}
 
         </div>
     </div>
@@ -450,31 +444,13 @@
         </div>
 
         <div class="owl-three owl-carousel">
-
-            <div class="avi">
-                <p class="aviType">Luc Pinelli</p>
-                <p class="aviDate">19/02/2023</p>
-                <p class="aviContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo. sagittis, orci ipsum laoreet purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo.</p>
-            </div>
-
-            <div class="avi">
-                <p class="aviType">Luc Pinelli</p>
-                <p class="aviDate">19/02/2023</p>
-                <p class="aviContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo. sagittis, orci ipsum laoreet purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo.</p>
-            </div>
-
-            <div class="avi">
-                <p class="aviType">Luc Pinelli</p>
-                <p class="aviDate">19/02/2023</p>
-                <p class="aviContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo. sagittis, orci ipsum laoreet purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo.</p>
-            </div>
-
-            <div class="avi">
-                <p class="aviType">Luc Pinelli</p>
-                <p class="aviDate">19/02/2023</p>
-                <p class="aviContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo. sagittis, orci ipsum laoreet purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id porta tellus. Fusce lobortis nec orci id commodo.</p>
-            </div>
-
+            {% for temoignage in temoignages %}
+                <div class="avi">
+                    <p class="aviType">{{ temoignage.nom }}</p>
+                    <p class="aviDate">{{ temoignage.created|date("d/m/Y") }}</p>
+                    <p class="aviContent">{{ temoignage.contenu }}</p>
+                </div>
+            {% endfor %}
         </div>
     </div>
 

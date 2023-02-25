@@ -7,6 +7,7 @@ use App\Entity\Block;
 use App\Entity\Youtube;
 use App\Entity\Actualite;
 use App\Entity\Partenaire;
+use App\Entity\Temoignage;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -44,6 +45,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Youtube', 'fas fa-dot-circle', Youtube::class)->setDefaultSort(['id' => 'DESC']);
         yield MenuItem::linkToCrud('Actualités', 'fas fa-dot-circle', Actualite::class)->setDefaultSort(['id' => 'DESC']);
         yield MenuItem::linkToCrud('Partenaires', 'fas fa-dot-circle', Partenaire::class)->setDefaultSort(['id' => 'DESC']);
+        yield MenuItem::linkToCrud('Témoignages', 'fas fa-dot-circle', Temoignage::class)->setDefaultSort(['id' => 'DESC']);
+
     }
 
     public function configureUserMenu(UserInterface $user): UserMenu

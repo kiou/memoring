@@ -2,15 +2,14 @@
 
 namespace App\Entity;
 
-use Doctrine\DBAL\Types\Types;
-use App\Repository\PartenaireRepository;
+use App\Repository\TemoignageRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Table(name : "partenaire")]
+#[ORM\Table(name : "temoignage")]
 #[ORM\HasLifecycleCallbacks]
-#[ORM\Entity(repositoryClass: PartenaireRepository::class)]
-class Partenaire
+#[ORM\Entity(repositoryClass: TemoignageRepository::class)]
+class Temoignage
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -23,16 +22,14 @@ class Partenaire
     #[ORM\Column(type : "datetimetz", nullable:true)]
     private $changed;
 
-    #[ORM\Column(type : "string", length : 255)]
-    #[Assert\NotBlank(message : "Compléter le champ titre")]
-    private ?string $titre = null;
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message : "Compléter le champ nom")]
+    private ?string $nom = null;
 
-    #[ORM\Column(type : "string", length : 255, nullable:true)]
-    private ?string $logo = null;
-
-    #[ORM\Column(type : "string", length : 255, nullable:true)]
-    private ?string $pdf = null;
-
+    #[ORM\Column(type : "text")]
+    #[Assert\NotBlank(message : "Compléter le champ contenu")]
+    private ?string $contenu = null;
+    
     #[ORM\Column(name : "is_active", type : "boolean")]
     private $isActive;
 
@@ -89,38 +86,26 @@ class Partenaire
         $this->changed = new \DateTime();
     }
 
-    public function getTitre(): ?string
+    public function getNom(): ?string
     {
-        return $this->titre;
+        return $this->nom;
     }
 
-    public function setTitre(string $titre): self
+    public function setNom(string $nom): self
     {
-        $this->titre = $titre;
+        $this->nom = $nom;
 
         return $this;
     }
 
-    public function getLogo(): ?string
+    public function getContenu(): ?string
     {
-        return $this->logo;
+        return $this->contenu;
     }
 
-    public function setLogo(string $logo): self
+    public function setContenu(string $contenu): self
     {
-        $this->logo = $logo;
-
-        return $this;
-    }
-
-    public function getPdf(): ?string
-    {
-        return $this->pdf;
-    }
-
-    public function setPdf(string $pdf): self
-    {
-        $this->pdf = $pdf;
+        $this->contenu = $contenu;
 
         return $this;
     }
