@@ -143,6 +143,10 @@
     padding-right: 13px;
 }
 
+.page .inner{
+    padding: 70px 0px;
+}
+
 .page .inner h1 {
     margin-bottom: 10px;
 }
@@ -1065,6 +1069,32 @@
     .section13 .col{
         width: 100%;
         padding: 15px 0px;
+    }
+
+    .section4 .logoPub:after{
+        left: -75px;
+        width: 50px;
+    }
+    
+    .section4 .logoPub:before{
+        right: -75px;
+        width: 50px;
+    }
+
+    .stat1{
+        margin-left: 0px;
+    }
+
+    .faqPersonnage{
+        display: none;
+    }
+
+    .section9{
+        padding: 90px 0px;
+    }
+
+    .section1Pow{
+        display: none;
     }
     
 }
