@@ -21,7 +21,13 @@ $( document ).ready(function() {
                 items:5
             },
             1000:{
-                items:4
+                items:3
+            },
+            600:{
+                items:2
+            },
+            0:{
+                items:2
             },
         }
     });
@@ -36,6 +42,12 @@ $( document ).ready(function() {
             },
             1000:{
                 items:2
+            },
+            900:{
+                items:1
+            },
+            0:{
+                items:1
             },
         }
     });
@@ -90,6 +102,12 @@ $( document ).ready(function() {
     $('.faqs').accordion({
         heightStyle: "content"
     });
+
+    $('.fa-bars').on('click', function(e){
+        e.preventDefault();
+        $('.mobilemenucontent').toggleClass('active');
+    });
+
 
 });
 

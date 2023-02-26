@@ -10,9 +10,9 @@
         <div class="navCentre {% if action is not defined %}full{% endif %}">
             <div class="logo">
                 {% if action is defined %}
-                    <img src="{{ asset('img/logomenu.png') }}" class="linknav" data-nav=".content" alt="L'informatique avec vous logo">
+                    <img src="{{ asset('img/logomenu.png') }}" class="linknav" data-nav=".content" alt="Memo Ring - Le jeu qui Puch les neurones">
                 {% else %}
-                    <a href="{{ path('app_index') }}"><img src="{{ asset('img/logomenu.png') }}" alt="L'informatique avec vous logo"></a>
+                    <a href="{{ path('app_index') }}"><img src="{{ asset('img/logomenu.png') }}" alt="Memo Ring - Le jeu qui Puch les neurones"></a>
                 {% endif %}
             </div>
         </div> 
@@ -29,7 +29,9 @@
             </div>
 
             <div class="mobilemenucontent">
-                <a href="">Lien</a>
+                <a href="#" class="linknav" data-nav=".section3">Question</a>
+                <a href="#" class="linknav" data-nav=".section5">Strategie</a>
+                <a href="{{ path('app_actualites') }}">Actualités</a>
             </div>
         {% endif %}
 
