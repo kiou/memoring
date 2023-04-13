@@ -1,0 +1,566 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block content %}
+
+    <div class="section section1">
+        <div class="inner">
+        
+            <div class="section1Left">
+                <h1>Pourquoi ?<br><span>La transmission des savoirs</span></h1>
+                <h1>pour qui ?<br><span>Intergénérationnel de 7 à 107 ans</span></h1>
+                <h1>Pour quoi ?<br><span>Plaisir du  jeu, plaisir d'apprendre</span></h1>
+                <h1>Comment ?<br><span>Jeu de question de stratégie et de combat sur le ring</span></h1>
+
+                {{ render(controller('App\\Controller\\BlockController::view', {id: 1} )) }} 
+
+                <div class="viewMore" data-more="1">
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 2} )) }}
+                </div>
+
+                <a href="#" class="btnContent" data-more="1">En savoir +</a>
+            </div>
+
+            <div class="section1Right">
+                <div class="section1Boite">
+                    <img src="{{ asset('img/boite-de-jeu.png') }}">
+                    <img src="{{ asset('img/cool.png') }}" class="section1Cool">
+                </div>
+            </div>
+
+            <div class="clear"></div>
+        </div>   
+
+        <img src="{{ asset('img/plateau-de-jeu-memo-ring.png') }}" class="section1Plateau">
+        <img src="{{ asset('img/pow.png')}}" class="section1Pow">
+    </div>
+
+    <div class="section section2">
+        <div class="inner">
+
+            <div class="titreCentre">
+                <h2>Nos vidéos</h2>
+            </div>
+
+            <div class="owl-one owl-carousel">
+
+                {% for video in videos %}
+                    <div>
+                        <div class="videoPlayer">
+                            <iframe width="100%" height="574px" src="https://www.youtube.com/embed/{{ video.link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="videoContent">
+                            {{ video.contenu|raw }}
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="clear"></div>
+        </div>
+        <img src="{{ asset('img/personnage1.png')}}" class="section2Personnage">
+    </div>
+
+    <div class="section section3">
+        <div class="inner">
+            <div class="titreCentre">
+                <h2>JEU DE QUESTIONS DE CULTURE GENERALE</h2>
+            </div>
+
+            <div class="moduleLeft">
+
+                <div class="moduleImage">
+                    <img src="{{ asset('img/jeu-de-question-culture-generale.png') }}">
+                </div>
+
+                <div class="moduleContent">
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 3} )) }}
+
+                    <div class="moduleBtn">
+                        <a href="#" class="btn">Acheter le jeu</a>
+                    </div>
+               </div>
+                
+                <div class="clear"></div>
+
+            </div>
+
+            <div class="titreCentre section14">
+                <h2>JEU DE STRATEGIE</h2>
+            </div>
+
+            <div class="moduleRight">
+
+                <div class="moduleContent">
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 4} )) }}
+
+                    <div class="moduleBtn">
+                        <a href="#" class="btn">Acheter le jeu</a>
+                    </div>
+                </div>
+
+                <div class="moduleImage">
+                    <img src="{{ asset('img/jeu-de-strategie.png') }}">
+                </div>
+                
+                <div class="clear"></div>
+
+            </div>
+
+            <div class="titreCentre">
+                <h2>JEU PERSONNALISABLE ET EVOLUTIF</h2>
+            </div>
+
+            <div class="moduleLeft">
+
+                <div class="moduleImage">
+                    <img src="{{ asset('img/jeu-personnalisable-et-evolutif.png') }}">
+                </div>
+
+                <div class="moduleContent">
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 5} )) }}
+
+                    <div class="moduleBtn">
+                        <a href="#" class="btn">Acheter le jeu</a>
+                    </div>
+               </div>
+                
+                <div class="clear"></div>
+
+            </div>
+                        
+            <div class="titreCentre">
+                <h2>JEU INSPIRE DES SCIENCES COGNITIVES</h2>
+            </div>
+
+            <div class="moduleRight">
+
+                <div class="moduleContent">
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 6} )) }}
+
+                    <div class="moduleBtn">
+                        <a href="#" class="btn">Acheter le jeu</a>
+                    </div>
+                </div>
+
+                <div class="moduleImage">
+                    <img src="{{ asset('img/jeu-inspire-des-sciences-cognitives.png') }}">
+                </div>
+                
+                <div class="clear"></div>
+
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="section section4">
+        <div class="inner">
+            <div class="logoPub">
+                <img src="{{ asset('img/logomenu.png') }}">
+            </div><br>
+
+            <a href="#" class="btn">entrez dans le ring</a>
+        </div>
+    </div>
+
+    <div class="section section5">
+        <div class="inner">
+
+            <div class="titreCentre">
+                <h2>JOUER AU MEMO RING</h2>
+            </div>
+
+            <div class="moduleLeft first">
+
+                <div class="moduleImage">
+                    <img src="{{ asset('img/jouer-au-momo-ring.png') }}">
+                </div>
+
+                <div class="moduleContent">
+
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 7} )) }}
+
+                    <div class="moduleStats">
+                        <div class="moduleStat stat1">
+                            {{ render(controller('App\\Controller\\BlockController::view', {id: 17} )) }}
+                        </div>
+
+                        <div class="moduleStat stat2">
+                            {{ render(controller('App\\Controller\\BlockController::view', {id: 18} )) }}
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+               </div>
+
+                <div class="clear"></div>
+
+            </div>
+
+            <div class="titreCentre">
+                <h2>Connaissance - LES QUESTIONS CULTURE GENERALE</h2>
+            </div>
+
+            <div class="moduleRight">
+
+                <div class="moduleContent">
+
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 8} )) }}
+
+                    <div class="moduleBtn">
+                        <a href="#" class="btn">Acheter le jeu</a>
+                    </div>
+                </div>
+
+                <div class="moduleImage">
+                    <img src="{{ asset('img/les-questions-de-culture-generale.png') }}">
+                </div>
+                
+                <div class="clear"></div>
+
+            </div>
+
+            <div class="titreCentre">
+                <h2>Stratégie - LES ACTIONS DE JEU</h2>
+            </div>
+
+            <div class="moduleLeft">
+
+                <div class="moduleImage">
+                    <img src="{{ asset('img/les-actions-de-jeux.png') }}">
+                </div>
+
+                <div class="moduleContent">
+
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 9} )) }}
+
+                    <div class="moduleBtn">
+                        <a href="#" class="btn">Acheter le jeu</a>
+                    </div>
+               </div>
+                
+                <div class="clear"></div>
+
+            </div>
+
+            <div class="titreCentre section15">
+                <h2>Combat - LES CARTES STRATEGIES POUR LE COMBAT</h2>
+            </div>
+
+            <div class="moduleRight">
+
+                <div class="moduleContent">
+
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 10} )) }}
+
+                    <div class="moduleBtn">
+                        <a href="#" class="btn">Acheter le jeu</a>
+                    </div>
+                </div>
+
+                <div class="moduleImage">
+                    <img src="{{ asset('img/les-cartes-strategies-pour-le-combat.png') }}">
+                </div>
+                
+                <div class="clear"></div>
+
+            </div>
+
+            <div class="titreCentre">
+                <h2>Entrainement - LA BOITE "KO" POUR LES ENTRAINEMENTS</h2>
+            </div>
+
+            <div class="moduleLeft">
+
+                <div class="moduleImage">
+                    <img src="{{ asset('img/la-boite-ko.png') }}">
+                </div>
+
+                <div class="moduleContent">
+
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 11} )) }}
+
+                    <div class="moduleBtn">
+                        <a href="#" class="btn">Acheter le jeu</a>
+                    </div>
+               </div>
+                
+                <div class="clear"></div>
+
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="section section6">
+
+        <div class="owl-two owl-carousel">
+
+            {% for partenaire in partenaires %}
+                <div>
+                    <div class="partenaireLogo">
+                        <img src="{{ asset('img/miniature/' ~ partenaire.logo) }}">
+                    </div>
+
+                    {% if partenaire.pdf is not null %}
+                        <div class="partenairePdf">
+                            <a href="file/upload/{{ partenaire.pdf }}">Télécharger le PDF</a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="section section7">
+        <marquee>
+            {% for i in 0..50 %}
+                <a href="mailto:pinelli.luc@outlook.fr">Devenez partenaire</a>
+                <i class="fas fa-caret-left"></i>
+            {% endfor %}
+        </marquee>
+        <div class="clear"></div>  
+    </div>
+
+    <div class="section section8">
+        <div class="inner">
+
+            <div class="section8Left">
+                <div class="titreCentre">
+                    <h2>concours lépine</h2>
+                    <p>Médaille d'argent</p>
+                </div>
+
+                <img src="{{ asset('img/concours-lepine-profil.png') }}">
+            </div>
+
+            <div class="section8Right">
+                <img src="{{ asset('img/concours-lepine-chien.png') }}">
+
+                {{ render(controller('App\\Controller\\BlockController::view', {id: 12} )) }}
+
+                <div class="viewMore" data-more="2">
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 13} )) }}                    
+                </div>
+                <a href="#" class="btnContent" data-more="2">En savoir +</a>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="section section9">
+        <div class="titreCentre">
+            <h2>témoignages des joueurs</h2>
+        </div>
+
+        <div class="owl-three owl-carousel">
+            {% for temoignage in temoignages %}
+                <div class="avi">
+                    <p class="aviType">{{ temoignage.nom }}</p>
+                    <p class="aviContent">{{ temoignage.contenu }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="section section10">
+        <div class="inner">
+            <div class="titreCentre">
+                <h2>toutes nos actualités</h2>
+            </div>
+
+            <div class="titreChapo">
+                {{ render(controller('App\\Controller\\BlockController::view', {id: 14} )) }} 
+            </div>
+
+            <div class="section10Left">
+                <div class="actuListeImage">
+                    <img src="{{ asset('img/miniature/' ~ lastActualite[0].image) }}">
+                </div>
+
+                <div class="actuListeContent">
+                    <div class="actuListeContentTop">
+                        <div class="flag">{{ lastActualite[0].categorie }}</div>
+                        <div class="actuListeDate"><p>{{ lastActualite[0].created|date("d/m/Y") }}</p></div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <h2>{{ lastActualite[0].titre }}</h2>
+                    <p>{{ lastActualite[0].resume }}</p>
+                    <a href="{{ path('app_actualites_view',{'slug': lastActualite[0].slug, 'id': lastActualite[0].id})}}" class="btnContent">Lire la suite</a>
+                </div>
+            </div>
+
+            <div class="section10Right">
+                {% for nextActualite in nextActualites %}
+
+                    <div class="actuSmall">
+
+                        <div class="actuSmallImage">
+                            <img src="{{ asset('img/miniature/' ~ nextActualite.image) }}">
+                        </div>
+
+                        <div class="actuSmallContent">
+                            <div class="actuSmallContentTop">
+                                <div class="flag">{{ nextActualite.categorie }}</div>
+                                <div class="actuSmallDate"><p>{{ nextActualite.created|date("d/m/Y") }}</p></div>
+                                <div class="clear"></div>
+                            </div>
+
+                            <h2>{{ nextActualite.titre }}</h2>
+                            <p>{{ nextActualite.resume }}</p>
+                            <a href="{{ path('app_actualites_view',{'slug': nextActualite.slug, 'id': nextActualite.id})}}" class="btnContent">Lire la suite</a>
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+
+                {% endfor %}
+            </div>
+            
+            <div class="clear"></div>
+
+            <div class="viewAll">
+                <a href="{{ path('app_actualites') }}" class="btnContent">TOUTE L'ACTUALITE</a>
+            </div>
+        </div>
+
+        <img src="{{ asset('img/actuPersonnage.png') }}" class="actuPersonnage">
+    </div>
+
+    <div class="section section4">
+        <div class="inner">
+            <div class="logoPub">
+                <img src="{{ asset('img/logomenu.png') }}">
+            </div><br>
+
+            <a href="#" class="btn">entrez dans le ring</a>
+        </div>
+    </div>
+
+    <div class="section section11">
+        <div class="inner">
+
+            <div class="titreCentre">
+                <h2>FOIRE AUX QUESTIONS</h2>
+            </div>
+
+            <div class="titreChapo">
+                {{ render(controller('App\\Controller\\BlockController::view', {id: 15} )) }} 
+            </div>
+
+            <div class="faqs">
+                {% for faq in faqs %}
+                    <h3>{{ faq.question }}</h3>
+
+                    <div class="faqContent">
+                        {{ faq.contenu|raw }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="viewAll">
+                <a href="lien" class="btnContent">télécharger notre e-book</a>
+            </div>
+        </div>
+
+        <img src="{{ asset('img/faq-personnage.png') }}" class="faqPersonnage">
+    </div>
+
+    <div class="section section12">
+        <div class="inner">
+
+            <div class="section12Left">
+
+                <div class="titreCentre">
+                    <h2>contactez-nous</h2>
+                </div>
+
+                <p>{{ render(controller('App\\Controller\\BlockController::view', {id: 16} )) }}</p>
+            </div>
+            <div class="section12Right">
+                
+                {{ form_start(form) }}
+
+                    {{ form_errors(form) }}
+
+                    <div class="form-error">
+                        {{ form_errors(form.nom) }}
+                    </div>
+                    {{ form_widget(form.nom) }}
+
+                    <div class="form-error">
+                        {{ form_errors(form.tel) }}
+                    </div>
+                    {{ form_widget(form.tel) }}
+
+                    <div class="form-error">
+                        {{ form_errors(form.email) }}
+                    </div>
+                    {{ form_widget(form.email) }}
+
+                    <div class="form-error">
+                        {{ form_errors(form.message) }}
+                    </div>
+                    {{ form_widget(form.message) }}
+
+                    <div class="form-error">
+                        {{ form_errors(form.captcha) }}
+                    </div>
+                    {{ form_widget(form.captcha) }}
+
+                    <div class="formsend">
+                        {{ form_widget(form.Envoyer) }}
+                    </div>
+
+                    {{ form_rest(form) }}
+
+                {{ form_end(form) }}
+
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="section section13">
+        <div class="inner">
+
+            <div class="cols">
+                <div class="col">
+                    <h4>Liens utiles</h4>
+                    <p><a href="lien">L'informatique avec vous</a></p>
+                    <p><a href="lien">Autre lien</a></p>
+                    <p><a href="lien">Autre lien</a></p>
+                </div>
+                <div class="col">
+                    <h4>Memo Ring</h4>
+                    <p>Eric Floury</p>
+                    <p>Les Roches</p>
+                    <p>07000 COUX</p>
+                </div>
+                <div class="col reseaux">
+                    <h4>Suivez-nous</h4>
+                    <p>
+                        <a href="lien"><i class="fab fa-facebook"></i></a>
+                        <a href="lien"><i class="fab fa-youtube"></i></a>
+                        <a href="lien"><i class="fab fa-twitter"></i></a>
+                        
+                    </p>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+{% endblock %}

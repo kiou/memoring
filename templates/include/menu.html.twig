@@ -1,0 +1,44 @@
+<nav class="navigation">
+    <div class="inner">
+        
+        {% if action is defined %}
+            <div class="navLeft">
+                <a href="#" class="linknav" data-nav=".section3">Question</a>
+                <a href="#" class="linknav" data-nav=".section14">Stratégie</a>
+            </div>
+        {% endif %}
+        
+        <div class="navCentre {% if action is not defined %}full{% endif %}">
+            <div class="logo">
+                {% if action is defined %}
+                    <img src="{{ asset('img/logomenu.png') }}" class="linknav" data-nav=".content" alt="Memo Ring - Le jeu qui Puch les neurones">
+                {% else %}
+                    <a href="{{ path('app_index') }}"><img src="{{ asset('img/logomenu.png') }}" alt="Memo Ring - Le jeu qui Puch les neurones"></a>
+                {% endif %}
+            </div>
+        </div> 
+
+        {% if action is defined %}
+            <div class="navRight">
+                <a href="#" class="linknav" data-nav=".section5">Jeu</a>
+                <a href="#" class="linknav" data-nav=".section15">Combat</a>
+            </div>
+        {% endif %}
+        
+        {% if action is defined %}
+            <div class="navigationrightmobile">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <div class="mobilemenucontent">
+                <a href="#" class="linknav" data-nav=".section3">Question</a>
+                <a href="#" class="linknav" data-nav=".section14">Stratégie</a>
+                <a href="#" class="linknav" data-nav=".section5">Jeu</a>
+                <a href="#" class="linknav" data-nav=".section15">Combat</a>
+                <a href="{{ path('app_actualites') }}">Actualités</a>
+            </div>
+        {% endif %}
+
+        <div class="clear"></div>
+    </div>
+</nav>

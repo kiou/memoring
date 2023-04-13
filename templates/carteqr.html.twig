@@ -1,0 +1,20 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block title %} <title> Memo Ring - {{ carte.titre }}</title>{% endblock %}
+
+{% block content %}
+
+    {{ include('include/breadcrumb.html.twig') }}
+
+    <div class="section page">
+        <div class="inner">
+
+            <div class="pageContentAll">
+                <h1>{{ carte.titre }}</h1>
+                {{ carte.contenu|raw }}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

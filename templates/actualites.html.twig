@@ -1,0 +1,41 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block content %}
+
+    {{ include('include/breadcrumb.html.twig') }}
+
+    <div class="section page liste">
+        <div class="inner">
+
+                <div class="titreCentre">
+                    <h1>Nos actualités</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the </p>
+                </div>
+
+                <div class="actualites">
+                    {% for actualite in actualites %}
+                        <div class="actualite">
+                            <div class="actualiteImage">
+                                <img src="{{ asset('img/miniature/' ~ actualite.image) }}">
+                            </div>
+
+                            <div class="actualiteContent">
+                                <div class="actualiteContentTop">
+                                    <div class="flag">{{ actualite.categorie }}</div>
+                                    <div class="actualiteDate"><p>{{ actualite.created|date("d/m/Y") }}</p></div>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <h2>{{ actualite.titre }}</h2>
+                                <p>{{ actualite.resume }}</p>
+                                <a href="{{ path('app_actualites_view',{'slug': actualite.slug, 'id': actualite.id})}}" class="btnContent">Lire la suite</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+{% endblock %}

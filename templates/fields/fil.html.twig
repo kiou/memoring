@@ -1,0 +1,5 @@
+{% if field.value is null %}
+    <span class="badge badge-secondary">Aucun(e)</span>
+{% else %}
+    <a href="file/upload/{{field.value}}" class="btn btn-primary">Télécharger</a>
+{% endif %}

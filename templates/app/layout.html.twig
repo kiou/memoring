@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block title %} <title>Memo Ring - Le jeu qui Puch les neurones</title>{% endblock %}
+
+    {% block opengraph %}
+        <meta property="og:title" content="Memo Ring - Le jeu qui Puch les neurones">
+        <meta property="og:description" content="MEMO-RING est une version inédite du jeu de questions de culture générale. Il allie avec finesse les connaissances et la stratégie pour que les matchs dans le ring soient inoubliables.">
+        <meta property="og:url" content="https://site58.lucpinelli.fr/">
+        <meta property="og:image" content="{{ asset('img/ogimage.jpg') }} ">
+    {% endblock %}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <script src="https://kit.fontawesome.com/b350f69ae8.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+
+</head>
+<body>
+    
+    <main class="content">
+
+        {{ include('include/flash.html.twig') }}
+
+        {{ include('include/menu.html.twig') }}
+
+        {% block content %}
+
+        {% endblock %}
+
+        {{ include('include/footer.html.twig') }}
+    </main>
+
+    {% block script %}
+
+    {% endblock %}
+
+</body>
+</html>

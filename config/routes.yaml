@@ -1,0 +1,29 @@
+app_index:
+    path: /
+    controller: App\Controller\GlobalController::index
+
+app_actualites:
+    path: /actualites
+    controller: App\Controller\ActualiteController::index
+
+app_actualites_view:
+    path:     /actualite/{slug}/{id}
+    defaults: { _controller: App\Controller\ActualiteController::view }
+    requirements:
+        slug: ([a-z-0-9]*)
+        id: \d+
+
+app_carteqr_bleu_view:
+    path:     /complement-question/.p-{idcarte}
+    defaults: { _controller: App\Controller\CarteqrController::viewbleu }
+
+app_carteqr_orange_view:
+    path:     /complement-question/c-{idcarte}
+    defaults: { _controller: App\Controller\CarteqrController::vieworange }
+
+app_carteqr_vert_view:
+    path:     /complement-question/a-{idcarte}
+    defaults: { _controller: App\Controller\CarteqrController::viewvert }
+
+app_logout:
+    path: /logout
